@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헤더</title>
+    <script type="text/javascript" src="./scrollindicator.js"></script>
+    
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .content {
+        width: 100%;
+        height: 6000px; /* 스크롤바가 생기도록 강제로 가상 컨텐츠 높이 생성 */
+        background-color: #fafafa;
+        
+      }
+      /* 프로그래스바 */
+      .progressbar {
+        position: fixed; /* 페이지 상단에 프로그레스바 고정 */
+        height: 8px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 500;
+      }
+      .progressbar > .progress {
+        width: 0%; /* 프로그래스바 진행 정도 */
+        height: 100%;
+        transition: width 0.3s ease; /* 부드러운 가속도 애니메이션 추가 */
+        background-color: #a00;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul li{
+        list-style: none;
+      }
+      body{
+ -ms-overflow-style: none;
+ }
+ 
+::-webkit-scrollbar {
+  display: none;
+}
+
+    </style>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        //스크롤 이벤트 처리
+        window.addEventListener("scroll", function (event) {
+          if (document.querySelector(".progressbar") != null) setProgress();
+        });
+      });
+
+      function setProgress() {
+        let currY = document.documentElement.scrollTop; //스크롤한 높이
+        let totalY =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight; //전체 높이
+        let percentage = (currY / totalY) * 100; //퍼센트 값
+        document.querySelector(".progress").style.width = percentage + "%"; //프로그래스바 너비 변경
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrap" >
+      <header id="header" style="position: fixed; left: 100px; z-index: 1; ">
+        <div class="header_p">
+          <h1>
+            <a href="/">STAR LAW FIRM</a>
+          </h1>
+        </div>
+      </header>
+      <nav id="nav" style="position: fixed; left: 300px;  " >
+        <ul id="menu__list">
+          <li id="menu__menu">
+            스타법무법인이란?
+            <div id="subwrapper">
+              <nav id="subnav">
+                <ul id="submenu__list">
+                  <li id="submenu__menu">
+                    <div style="background-color: rgb(217, 217, 217)">
+                      <h2>ABOUT</h2>
+                      <p>
+                        법률 서비스를 주도하는 흐름 속에 한발 앞서 <br />
+                        나가 모두가 편하게 느끼고 소통할 수 있는 <br />
+                        ‘법률공간’을 만들고자 합니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="submenu__menu">회사소개</li>
+                  <li id="submenu__menu">연혁</li>
+                  <li id="submenu__menu">구성원 소개</li>
+                  <li id="submenu__menu">CONTACT US</li>
+                </ul>
+              </nav>
+            </div>
+          </li>
+          <li id="menu__menu">
+            스타법무법인의 생활
+            <div id="subwrapper">
+              <nav id="subnav">
+                <ul id="submenu__list">
+                  <li id="submenu__menu">
+                    <div style="background-color: rgb(217, 217, 217)">
+                      <h2>CAREER</h2>
+                      <p>
+                        더 나은 내일을 위해 스타 법무법인은<br />
+                        가치 있는 고민으로 새로운 문화를<br />
+                        만들어 가고 있습니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="submenu__menu">인재경영</li>
+                  <li id="submenu__menu">직무소개</li>
+                  <li id="submenu__menu">사내문화</li>
+                  <li id="submenu__menu">인재채용</li>
+                </ul>
+              </nav>
+            </div>
+          </li>
+          <li id="menu__menu">
+            주 업무의 이야기들
+            <div id="subwrapper">
+              <nav id="subnav">
+                <ul id="submenu__list">
+                  <li id="submenu__menu">
+                    <div style="background-color: rgb(217, 217, 217)">
+                      <h2>BUSINESS</h2>
+                      <p>
+                        스타 법무법인은 12개의 업무분야에 대한 <br />전문성을
+                        지니고 있습니다. 전문가와 함께하는 <br />스타 법무법인의
+                        모든 업무분야를 바로 <br />확인해보세요.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </li>
+          <li id="menu__menu">
+            <a href="">성공사례</a>
+            <div id="subwrapper">
+              <nav id="subnav">
+                <ul id="submenu__list">
+                  <li id="submenu__menu">
+                    <div style="background-color: rgb(217, 217, 217)">
+                      <h2>성공사례</h2>
+                      <p>
+                        스타 법무법인의 새로운 소식과 성과,<br />그리고 다양한
+                        법률 정보를 알려드립니다.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </li>
+          <li id="menu__menu">
+            <a href="">특별 전략</a>
+            <div id="subwrapper">
+              <nav id="subnav">
+                <ul id="submenu__list">
+                  <li id="submenu__menu">
+                    <div style="background-color: rgb(217, 217, 217)">
+                      <h2>SPECIAL OFFER</h2>
+                      <p>
+                        기업과 사회가 함께 더불어 살아가는 <br />
+                        ‘공존공영(共存共榮)’의 문화를 만드는 좋은 기회 <br />
+                        무료소송을 만나보세요.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="submenu__menu">Pro Bono 무료소송</li>
+                  <li id="submenu__menu">무료법인설립</li>
+                  <li id="submenu__menu">10일 이내 외도증거 확보</li>
+                  <li id="submenu__menu">보이스피싱 대처방법</li>
+                </ul>
+              </nav>
+            </div>
+          </li>
+          <li id="menu__menu">
+            <a href="">소식</a>
+            <div id="subwrapper">
+              <nav id="subnav">
+                <ul id="submenu__list">
+                  <li id="submenu__menu">
+                    <div style="background-color: rgb(217, 217, 217)">
+                      <h2>COMMUNITY</h2>
+                      <p>
+                        스타 법무법인은 커뮤니티 운영을 통해<br />회사 소식과
+                        다양한 정보를<br />실시간으로 전달하고 있습니다.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="content" >
+        <div style="height: 400px;  ">
+
+        </div>
+        <div class="award_area">
+          <div class="award">
+               
+          </div>
+      </div>
+      <div class="star_add_box" style="">
+          
+          <div class="foot_icon_area">
+      <div class="foot_icon"  >
+      <a href="" >
+      <svg class="svg-inline--fa fa-instagram" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><!-- <i class="fa-brands fa-instagram"></i> -->
+      </a>
+      </div>
+      <div class="foot_icon"  >
+      <a href="" >
+      <svg class="svg-inline--fa fa-youtube" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg><!-- <i class="fa-brands fa-youtube"></i> -->
+      </a>
+      </div>
+      <div class="foot_icon"  >
+      <a href="" >
+      <svg class="svg-inline--fa fa-naver-blog" aria-hidden="true" focusable="false" data-prefix="fak" data-icon="naver-blog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="width: 1em;"><path fill="currentColor" d="M133.083 228.736c0 11.553-9.704 21.257-21.256 21.257-11.553 0-21.257-9.704-21.257-21.257 0-11.552 9.704-21.256 21.257-21.256s21.256 9.704 21.256 21.256zm274.484-21.256c-12.477 0-22.18 10.166-22.18 22.18 0 12.477 10.165 22.181 22.18 22.181 12.476 0 22.18-10.166 22.18-22.18 0-12.015-9.704-22.18-22.18-22.18zm-118.296-1.848c-12.939 0-23.105 10.628-23.105 23.104 0 12.94 10.628 23.105 23.105 23.105 12.938 0 23.104-10.628 23.104-23.105 0-12.476-10.166-23.104-23.104-23.104zM512 115.062v202.396c0 44.824-36.043 80.867-80.866 80.867H312.838l-50.369 74.397c-4.62 7.393-11.552 6.931-15.71 0l-46.21-74.397H81.329C36.505 398.325 0 361.819 0 317.458V115.061c0-44.823 36.505-81.328 81.329-81.328h349.805c44.36 0 80.866 36.505 80.866 81.328zM155.264 228.735v-6.931c0-27.726-22.181-40.664-39.74-40.664-17.56 0-25.416 8.317-25.416 8.317v-51.754h-30.96v138.628h30.036v-11.09s5.545 11.09 27.264 11.09c18.946 0 36.043-16.173 37.891-33.27.925-10.167.925-11.553.925-14.326zm45.285-78.556c-11.09-12.476-31.423-12.476-31.423-12.476v27.726s5.083 1.386 9.242 5.083c6.932 6.007 6.932 9.242 6.932 9.242v92.88h27.725v-97.964c-.462 0 .462-9.241-12.476-24.49zm139.09 78.556c0-27.725-22.643-50.368-50.368-50.368s-50.368 22.643-50.368 50.368 22.642 50.369 50.368 50.369 50.368-22.18 50.368-50.369zm116.91-47.595H430.67v9.704s-1.848-2.773-6.469-5.545c-4.62-2.31-8.318-3.697-18.484-3.697-15.71 0-26.801 6.931-32.346 12.939-5.545 6.007-12.015 16.635-12.015 35.119 0 16.173 6.47 29.112 13.401 36.505 6.932 7.394 19.408 11.552 28.188 11.552 8.318 0 15.711-1.386 19.87-3.696 6.007-3.235 7.855-7.394 7.855-7.394v12.939s.463 2.772-.462 5.545c-.462 2.31-1.848 4.62-3.696 6.47-1.387 1.385-3.235 2.31-4.621 3.234-3.235 1.386-11.553 1.386-11.553 1.386h-9.704v26.34h10.629s10.166-.463 16.635-2.311c3.697-.924 8.318-3.235 11.09-5.083 4.621-3.235 6.47-5.545 9.704-9.242 4.159-5.545 5.545-9.704 6.47-15.249.924-6.007.924-8.78.924-8.78V181.141z"></path></svg><!-- <i class="fak fa-naver-blog" aria-hidden="true"></i> -->
+      </a>
+      </div>
+      </div>
+      </div>
+      <div class="foot_bottom_area">
+          <div class="foot_logo star" style="grid-area: a">
+          </div>
+          <div class="text_area no-max-w-limit-pc" style="grid-area: b">
+              <div class="t_show">
+                  <div class="wd125-1024">
+      <b class="main">스타 법무법인</b> ㅣ 사업자번호&nbsp;&nbsp;<b>656-81-02417</b> ㅣ 대표 변호사&nbsp;&nbsp;<b class="main">최진기</b> ㅣ 부대표 변호사&nbsp;&nbsp;<b class="main">권민아&nbsp;&nbsp;&nbsp;</b> <br><br>
+      
+      <div class="position">
+      <span><b class="sub">부산본점</b></span>
+      <span>ㅣ</span>
+      <span><b class="sub">부산 부산진구 중앙대로 750, 에플에셋빌딩 4층</b></span>
+      <span><b class="sub">T. 051-802-0626</b></span>
+      <span><b class="sub">F. 051-797-8616</b></span>
+      <br class="wd-1070-878">
+      <div class="sub-flex"><b class="sub">E. master@star-law.com</b><hr><p>분사무소</p></div>
+      </div>
+      
+      
+      <div class="position">
+      <span><b class="sub">대구본점</b></span>
+      <span>ㅣ</span>
+      <span><b class="sub">대구 중구 달구벌대로 2095, 삼성생명빌딩 11층</b></span>
+      <span><b class="sub">T. 053-218-0626</b></span>
+      <span><b class="sub">F. 053-715-1626</b></span>
+      <br class="wd-1070-878">
+      <div class="sub-flex"><b class="sub">E. master@star-law.com</b><hr><p>주사무소</p></div>
+      </div>
+      
+      <br>
+      </div>                            </div>
+              <div class="pc_show">
+                  <b class="main">스타 법무법인</b>ㅣ 사업자번호&nbsp;&nbsp;<b>656-81-02417</b>ㅣ 대표 변호사&nbsp;&nbsp;<b class="main">최진기</b> ㅣ 부대표 변호사&nbsp;&nbsp;<b class="main">권민아&nbsp;&nbsp;&nbsp;</b> <br><br>
+      
+      <div class="position">
+      <span><b class="sub">부산본점</b></span>
+      <span>ㅣ</span>
+      <span><b class="sub">부산 부산진구 중앙대로 750, 에플에셋빌딩 4층</b></span>
+      <span><b class="sub">T. 051-802-0626</b></span>
+      <span><b class="sub">F. 051-797-8616</b></span>
+      <br class="wd-1070-878">
+      <div class="sub-flex"><b class="sub">E. master@star-law.com</b><hr><p>분사무소</p></div>
+      </div>
+      
+      
+      <div class="position">
+      <span><b class="sub">대구본점</b></span>
+      <span>ㅣ</span>
+      <span><b class="sub">대구 중구 달구벌대로 2095, 삼성생명빌딩 11층</b></span>
+      <span><b class="sub">T. 053-218-0626</b></span>
+      <span><b class="sub">F. 053-715-1626</b></span>
+      <br class="wd-1070-878">
+      <div class="sub-flex"><b class="sub">E. master@star-law.com</b><hr><p>주사무소</p></div>
+      </div>
+      
+      <br>                            </div>
+          </div>
+          <div class="family_area" style="grid-area: c">
+              <div class="family_btn">
+                  <span>패밀리 사이트</span><svg class="svg-inline--fa fa-starlaw-arrow" aria-hidden="true" focusable="false" data-prefix="fak" data-icon="starlaw-arrow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="width: 1em;"><path fill="currentColor" d="M136.638 508.859c-4.712 0-7.853-1.57-10.994-4.712-6.282-6.282-6.282-15.705 0-21.987L353.374 256 125.644 29.84c-6.282-6.282-6.282-15.705 0-21.987 6.282-6.282 15.706-6.282 21.988 0l238.724 237.153c3.14 3.141 4.711 6.282 4.711 10.994s-1.57 7.853-4.711 10.994L147.632 504.147c-3.141 3.141-6.282 4.712-10.994 4.712z"></path></svg><!-- <i class="fak fa-starlaw-arrow" aria-hidden="true"></i> -->
+              </div>
+              <ul class="family_list">
+                                                              <li><a href=""><span></span>대표 홈페이지</a></li>
+                                                              <li><a href=""><span></span>리본회생·파산</a></li>
+                                                              <li><a href=""><span></span>리본이혼</a></li>
+                                                              <li><a href=""><span></span>음주운전센터</a></li>
+                                                              <li><a href=""><span></span>기업법무센터</a></li>
+                                                              <li><a href=""><span></span>형사소송센터</a></li>
+                                                              <li><a href=""><span></span>명도소송센터</a></li>
+                                                              <li><a href=""><span></span>가맹거래센터</a></li>
+                                                              <li><a href=""><span></span>산업재해센터</a></li>
+                                                              <li><a href=""><span></span>지식재산센터</a></li>
+                                              </ul>
+       
+          </div>
+          <div class="foot_logo coslab" style="grid-area: d">
+          </div>
+          <div class="text_area" style="grid-area: e">
+              Copyright © 2013-2022. STAR LAW FIRM all rights reserved. <br>
+      스타 법무법인은 이 콘텐츠에 관한 모든 권리를 소유하며 저작권법의 보호를 받고 있습니다. 본사의 동의 없이 이 콘텐츠에 실린 글과 사진·그림·디자인 등을 무단으로 사용할 경우 저작권법 위반으로 민·형사상 법적 대응을 할 것이며, 본사는 해당 민·형사소송에 있어 철저한 불관용 원칙을 적용합니다.                            <br><br>
+          </div>
+          <div class="text_area" style="grid-area: f">
+              Copyright © 2022. Designed by CO-S.Lab all rights reserved.<br>본 디자인자료는 스타 법무법인 디자인연구소 코스랩에 귀속되어 있습니다. 무단배포 및 불법복제를 금지합니다.                             <br>
+          </div>
+      </div>
+      </div>
+     
+      </div>
+      
+      <div class="mf_wrap">
+      <div class="foot_area">
+      <div class="foot_logo star">
+      </div>
+      
+      
+      </div>
+   
+      <div class="foot_icon_area">
+      
+      <div id="progressbar" class="progressbar">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </body>
+  <style>
+    /* nav css */
+    #wrapper {
+      background-color: rgb(191, 194, 196);
+      position: relative;
+      padding: 0;
+    }
+
+    #nav {
+      width: 100%;
+      max-width: 1400px;
+      padding: auto;
+      margin: 0 auto;
+    }
+
+    #menu__list {
+      display: table;
+      list-style-type: none;
+
+      width: 1400px;
+
+      text-align: center;
+    }
+
+    #menu__menu {
+      display: table-cell;
+      vertical-align: middle;
+
+      height: 50px;
+    }
+
+    #menu__menu:hover {
+      /* background-color: white; */
+    }
+
+    #menu__menu:hover #subwrapper {
+      display: block;
+    }
+
+    #menu__menu:hover #submenu__list {
+      display: table;
+    }
+
+    #subwrapper {
+      display: none;
+
+      
+      border: 1px solid rgb(191, 194, 196);
+      width: 1400px;
+
+      position: absolute;
+      top: 50px;
+      left: 0;
+    }
+
+    #subnav {
+      width: 100%;
+      max-width: 1400px;
+
+      margin: 0 auto;
+    }
+
+    #submenu__list {
+      display: none;
+      list-style-type: none;
+
+      width: 100%;
+
+      text-align: center;
+    }
+
+    #submenu__menu {
+      display: table-cell;
+      vertical-align: middle;
+
+      height: 50px;
+
+      cursor: pointer;
+    }
+
+    #submenu__menu:hover {
+      background-color: rgb(209, 209, 209);
+    }
+    a
+    {color:black;text-decoration:none;}a:visited{color:black;text-decoration:none;}a:hover{color:blue;text-decoration:underline;}
+
+  </style>
+</html>

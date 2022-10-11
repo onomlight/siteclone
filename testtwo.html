@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="hover-btn">HOVER</div>
+      <div class="menu">
+        <ul id="lnb">
+          <li class="hovermenu">
+            <a href="" class="topmenu">ABOUT</a>
+          </li>
+          <li class="hovermenu">
+            <a href="" class="topmenu">CAREER</a>
+          </li>
+          <li class="hovermenu">
+            <a href="" class="topmenu">BUSINESS</a>
+          </li>
+          <li class="hovermenu">
+            <a href="" class="topmenu">성공사례</a>
+          </li>
+          <li class="hovermenu">
+            <a href="" class="topmenu">SPECIAL OFFER</a>
+          </li>
+          <li class="hovermenu">
+            <a href="" class="topmenu">COMMUNITY</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .hover-btn {
+      width: 100%;
+      padding: 16px 0;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+    .menu {
+      display: none;
+      height: 100px;
+      width: 100%;
+      background: tomato;
+      transition: all 0.3s ease;
+    }
+
+    .wrapper:hover .hover-btn {
+      background: royalblue;
+      color: white;
+    }
+
+    .wrapper:hover .menu {
+      display: block;
+    }
+    .hovermenu {
+    }
+  </style>
+</html>
